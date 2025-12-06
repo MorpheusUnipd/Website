@@ -1,0 +1,178 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+#whole-page.container, #whole-page {
+    margin: 0 autot;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column; /* stack header above page */
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh; /* for testing scrolling behavior */
+}
+
+
+
+#header {
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    background-color: black !important;
+    height: 150px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 0 0 auto; /* header takes only needed space */
+}
+
+#buttons {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    gap: 12px;
+    text-align: center;
+    align-content: center;
+}
+#button1, #button2, #button3, #button4 {
+    position: relative;
+    top: 40%;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    max-width: fit-content;
+}
+
+button {
+    background-color: none;
+    color: #fff !important;
+    background-color: black !important;
+    text-decoration: underline;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+#page {
+    margin: 0;
+    padding: 0;
+    background-color: green !important;
+    flex-direction: column; /* stack children vertically */
+    min-width: 100%;
+    flex: 1 1 auto; /* grow to fill remaining space below header */
+    min-height: 0;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.title {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 2.5rem;
+    color: black !important;
+}
+
+#imgCarousel {
+    max-height: 100%;
+    width: 80%;
+    align-items: stretch;/**/
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.carousel-inner {
+    border: 2px solid black;
+    border-radius: 3px;
+    border-color: black;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    margin-bottom: 0; /* remove gap reserved for indicators (they're fixed) */
+}
+
+.carousel-inner, .carousel-item {
+    height: 100% !important;
+    width: 100%;
+    position: relative;
+    display: block;            /* prevent flex behavior */
+    box-sizing: border-box;
+    overflow: hidden; /* force inner and items to exactly match the carousel box */
+}
+
+.carousel-caption {
+    position: absolute;
+    z-index: 5;
+}
+
+/*LAVORA QUI PER LE IMMAGINI DEL CAROSELLO*/
+.carousel-item h3 {
+    height: 100% !important;
+   /* width:  !important;       /* avoid forcing width that distorts */
+    max-width: none;
+    object-fit: cover;            /* crop to cover without stretching */
+    display: block;
+    color: black !important;
+    text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 14.354a.5.5 0 0 1 0-.708L9.293 9 4.646 4.354a.5.5 0 1 1 .708-.708l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708 0z'/%3E%3C/svg%3E") !important;
+}
+
+/* make the carousel a fixed box so slides cannot change its height */
+#TeamCarousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: var(--team-carousel-height, 420px); /* set fixed height (adjust) */
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --indicator-bottom: 32px; /* adjust distance from bottom of viewport */
+}
+
+/*.carousel-indicators {
+    
+}*/
+
+#competition > *{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+#footer {
+    margin: 0;
+    padding: 0;
+    background-color: orange !important;
+    height: 100px;
+    min-width: 100%;
+    flex: 0 0 auto; /* footer takes only needed space */
+}
+
