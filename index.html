@@ -23,16 +23,31 @@
 <body>
     <div id="whole-page" class="container">
         <div id="header" class="container">
-            <div id="buttons" class="row">
+            <!-- <div id="buttons" class="row">
                 <div id="button1" class="col md-3"><button type="button">Button 1</button></div>
                 <div id="button2" class="col md-3"><button type="button">Button 2</button></div>
                 <div id="button3" class="col md-3"><button type="button">Button 3</button></div>
                 <div id="button4" class="col md-3"><button type="button">Button 4</button></div>
+            </div> -->
+            <div id="header-logo">
+                <img src="./images/Morpheus_img_testo.png" alt="Morpheus Team Logo">
+            </div>
+            <div id="menu-buttons">
+                <div id="button1"><button type="button">HOME</button></div>
+                <div id="button2"><button type="button">DEPARTMENTS</button></div>
+                <div id="button3"><button type="button">ROVER</button></div>
+                <div id="button4"><button type="button">CONTACT US</button></div>
             </div>
         </div>
 
         <div id="page" class="container row">
-            <div class="title"><H1>TEAM</H1></div>
+            <div id="chi-siamo">
+                <h1>Chi siamo</h1>
+                <p>We’re building a next-generation planetary rover to compete in the European Rover Challenge in Kraków. MORPHEUS unites mechanics, electronics, and informatics into one mission-ready robot inspired by real Mars rovers. Join us to work on space robotics, develop your thesis, and earn an official university certification.</p>
+            </div>
+            <div class="title">
+                <H1>TEAM</H1>
+            </div>
             <div id="TeamCarousel" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#TeamCarousel" data-bs-slide-to="0" class="active"
@@ -43,7 +58,7 @@
                         aria-label="Slide 3"></button>
                 </div>
 
-                
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <h3>TEAM 1</h3>
@@ -75,14 +90,62 @@
                 </button>
             </div>
 
-            <div id="competition">
-                <h1>European Rover Challenge</h1>
-                <p>
-                    The European Rover Challenge (ERC) is one of the largest and most prestigious robotics competitions in
-                    the world, focusing on space exploration technologies. Held annually in Poland, the ERC brings together
-                    teams from universities, research institutions, and private companies to design, build, and operate
-                    robotic rovers capable of performing tasks in simulated extraterrestrial environments.
-                </p>
+            <div id="departments-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#departments-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#departments-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#departments-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h3>Informatics</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Electronics</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Mechanics</h3>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#departments-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#departments-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div id="competition" class="d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-column justify-content-center">
+                    <h1>European Rover Challenge</h1>
+                    <p>
+                        The European Rover Challenge (ERC) is one of the largest and most prestigious robotics competitions
+                        in
+                        the world, focusing on space exploration technologies. Held annually in Poland, the ERC brings
+                        together
+                        teams from universities, research institutions, and private companies to design, build, and operate
+                        robotic rovers capable of performing tasks in simulated extraterrestrial environments.
+                    </p>
+                </div>
+                <img src="./images/ERC_logo.png" alt="ERC Logo" style="max-width: 200px; height: auto;">
+            </div>
+
+            <div id="contact">
+                <h1>Contact Us</h1>
+                <form action="submit_form.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
 
@@ -93,3 +156,5 @@
         </div>
     </div>
 </body>
+
+</html>
