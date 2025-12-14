@@ -12,16 +12,71 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
+<script>
+    function toggleMenu(event) {
+        event.preventDefault();
+        const menuLinks = document.querySelector('.menu-links');
+        const overlay = document.querySelector('.menu-overlay');
+        menuLinks.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+    
+    function closeMenu() {
+        const menuLinks = document.querySelector('.menu-links');
+        const overlay = document.querySelector('.menu-overlay');
+        if (menuLinks) menuLinks.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+    }
+    
+    // Aspetta che il DOM sia caricato
+    document.addEventListener('DOMContentLoaded', function() {
+        // Chiudi il menu quando si clicca su un link
+        document.querySelectorAll('.menu-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Chiudi il menu immediatamente
+                closeMenu();
+                
+                // Se è un link interno (ancora), gestisci lo scroll
+                if (href && href.startsWith('#') && href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }, 350);
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
+				<div class="menu-overlay" onclick="closeMenu()"></div>
 
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1><a href="index.html">Solid State</a></h1>
+						<!-- NUOVO -->
 						<nav>
-							<a href="#menu">Menu</a>
+							<a href="#" class="menu-toggle" onclick="toggleMenu(event)">
+								<i class="fas fa-bars"></i> Menu
+							</a>
+							<div class="menu-links">
+								<a href="index.html">Home</a>
+								<a href="generic.html">Chi siamo</a>
+								<a href="elements.html">Obiettivi</a>
+								<a href="#one">Dipartimenti</a>
+								<a href="#">Rover</a>
+								<a href="#">Contattaci</a>
+							</div>
 						</nav>
 					</header>
 
@@ -31,10 +86,11 @@
 							<h2>Menu</h2>
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
+								<li><a href="generic.html">Chi siamo</a></li>
+								<li><a href="elements.html">Obiettivi</a></li>
+								<li><a href="#one">Dipartimenti</a></li>
+								<li><a href="#">Rover</a></li>
+								<li><a href="#">Contattaci</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -55,11 +111,26 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/meccanica.png" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">MECCANICA</h2>
+										<p>Il Team Meccanico è responsabile della progettazione dell'intera architettura meccanica del rover, dal telaio e dalle sospensioni ai sottosistemi termici e strutturali.
+										Trasformiamo i requisiti della missione in progetti robusti e ottimizzati utilizzando simulazioni avanzate,
+										studi cinematici e flussi di lavoro automatizzati SolidWorks.
+										Il nostro lavoro integra:
+
+										<ul>
+											<li>Progettazione di studi parametrici e ottimizzazione meccanica (per componenti chiave come
+										linkers, bracci ed elementi delle sospensioni)</li>
+											<li>Analisi del movimento per la mobilità e la dinamica dei meccanismi</li>
+											<li>Simulazione strutturale e termica avanzata (FEM)</li>
+											<li>Simulazione del flusso e modellazione del trasferimento termico (CFD)</li>
+											<li>Flussi di lavoro di progettazione automatizzati e strumenti API SolidWorks</li>
+											<li>Visualizzazione, rendering e documentazione di alta qualità (supportati da SolidWorks PDM per
+										un controllo di versione pulito e la collaborazione a livello di team)</li>
+										</ul>
+									</p>
+										<!-- <a href="#" class="special">Learn more</a> -->
 									</div>
 								</div>
 							</section>
@@ -67,11 +138,23 @@
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/elettronica.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">ELETTRONICA</h2>
+										<p>
+											Il Team Elettronica è responsabile della progettazione dell'intera spina dorsale di alimentazione e comunicazione del rover. <br>
+											Sviluppiamo mission-critical hardware che assicura che ogni sottosistema – dalla mobilità al braccio robotico e ai payload scientifici – operi con la massima precisione e affidabilità. <br>
+
+										    Il nostro lavoro integra e gestisce:
+											<ul>
+												<li>Architettura di Alimentazione Distribuita con isolamento intelligente dei guasti.</li>
+												<li>Rete di Comunicazione CAN/CANopen ad alta affidabilità.</li>
+												<li>Stack di controllo embedded modulare (basato su STM32 e Jetson) con fusione di sensori.</li>
+												<li>Sistema Adattivo di Gestione dell'Alimentazione con regolazione dinamica del bus (in grado di regolare la tensione in tempo reale, prevedere il carico termico e ottimizzare l'energia in modalità missione).</li>
+											</ul>
+
+										</p>
+										<!-- <a href="#" class="special">Learn more</a> -->
 									</div>
 								</div>
 							</section>
@@ -79,11 +162,21 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image"><img src="images/informatica.png" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">INFORMATICA</h2>
+										<p>Il Team Informatico è responsabile dell'intero livello di intelligenza software del rover, dal controllo di basso livello all'autonomia di alto livello. <br>
+											Progettiamo, implementiamo e integriamo il framework computazionale che consente al rover di percepire l'ambiente circostante, prendere decisioni informate ed eseguire missioni complesse con precisione e resilienza. <br>
+											Il nostro lavoro comprende:
+
+											<ul>
+												<li>Framework di navigazione autonoma con SLAM e Sensor Fusion Development</li>
+												<li>Moduli di percezione e decisione basati su reti neurali (per la classificazione del terreno, il rilevamento dei pericoli e la logica di navigazione adattiva)
+												</li>
+												<li>Architettura di controllo in tempo reale per mobilità e manipolazione (per motori e braccio robotico)</li>
+												<li>Infrastruttura software distribuita ROS 2</li>
+											</ul></p>
+										<!-- <a href="#" class="special">Learn more</a> -->
 									</div>
 								</div>
 							</section>
