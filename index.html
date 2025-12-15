@@ -53,12 +53,40 @@
 					<section id="wrapper">
 
 						<!-- Presentazione -->
-							<section id="presentazione" class="wrapper spotlight style6">
+							<section id="presentazione" class="wrapper alt spotlight style6">
 								<div class="inner">
 									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">Chi Siamo</h2>
-										<p></p>
+										<p>Descrizione Team Morpheus</p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Presentazione pt.2 -->
+							<section id="numeri" class="wrapper spotlight style6">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Quanti Siamo</h2>
+										<div id="counters-container" style="display: flex; justify-content: space-around;">
+											<div style="text-align: center; flex: 1;">
+												<!-- CONTATORE STUDENTI cambiare data-target per modificare numero -->
+												<div class="counter" data-target="40" style="font-size: 48px; font-weight: bold;">0</div>
+												<p style="font-size: 16px; font-weight: bold;">STUDENTI</p>
+											</div>
+											<div style="text-align: center; flex: 1;">
+												<!-- CONTATORE DIPARTIMENTI cambiare data-target per modificare numero -->
+												<div class="counter" data-target="7" style="font-size: 48px; font-weight: bold;">0</div>
+												<p style="font-size: 16px; font-weight: bold;">DIPARTIMENTI</p>
+											</div>
+											<div style="text-align: center; flex: 1;">
+												<!-- CONTATORE NAZIONALITA' cambiare data-target per modificare numero -->
+												<div class="counter" data-target="10" style="font-size: 48px; font-weight: bold;">0</div>
+												<p style="font-size: 16px; font-weight: bold;">NAZIONALITA'</p>
+											</div>
+										</div>
 										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
@@ -70,7 +98,7 @@
 									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">European Rover Challenge</h2>
-										<p></p>
+										<p>L'European Rover Challenge (ERC) è una delle più grandi e prestigiose competizioni di robotica al mondo, focalizzata sulle tecnologie di esplorazione spaziale. Tenuta annualmente in Polonia, l'ERC riunisce squadre provenienti da università, istituti di ricerca e aziende private per progettare, costruire e operare rover robotici capaci di eseguire compiti in ambienti extraterrestri simulati.</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
@@ -202,6 +230,68 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+
+
+			<script>
+				// Funzione per animare i counter
+				function animateCounters() {
+					const counters = document.querySelectorAll('.counter');
+					counters.forEach(counter => {
+						const target = +counter.getAttribute('data-target');
+						const increment = target / 100; // Velocità dell'animazione
+						let current = 0;
+						const timer = setInterval(() => {
+							current += increment;
+							if (current >= target) {
+								counter.textContent = target;
+								clearInterval(timer);
+							} else {
+								counter.textContent = Math.floor(current);
+							}
+						}, 20); // Intervallo in ms
+					});
+				}
+
+				// Avvia l'animazione quando la pagina è caricata
+				window.addEventListener('load', animateCounters);
+			</script>
+
+			<script>
+  // Funzione per animare i counter
+  function animateCounters() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 100; // Velocità dell'animazione
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = target;
+          clearInterval(timer);
+        } else {
+          counter.textContent = Math.floor(current);
+        }
+      }, 20); // Intervallo in ms
+    });
+  }
+
+  // Intersection Observer per avviare l'animazione quando il container entra nel viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target); // Avvia solo una volta
+      }
+    });
+  }, { threshold: 0.1 }); // 10% del container visibile
+
+  // Osserva il container
+  const container = document.getElementById('counters-container');
+  observer.observe(container);
+</script>
 
 	</body>
 </html>
