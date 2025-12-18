@@ -1,183 +1,999 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpheus Team - University of Padua Rover Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200,700&family=Source+Sans+Pro:wght@300,600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        html {
+            scroll-behavior: smooth;
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #15242B;
+            color: #ffffff;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+        body.is-loading .hero-content {
+            opacity: 0;
+        }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-						</div>
-					</section>
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            background: rgba(30, 30, 30, 0.98);
+        }
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-					</section>
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #9B0014;
+            transition: width 0.3s ease;
+        }
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-			</div>
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 2px solid rgba(255, 255, 255, 0.125);
+            background: transparent;
+            color: #ffffff;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #9B0014;
+        }
 
-	</body>
+        .menu-toggle i {
+            margin-right: 0.5rem;
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(46, 49, 65, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
+
+        /* Hero Banner */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #15242B 0%, #1e1e1e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="300" fill="rgba(155,0,20,0.1)"/><circle cx="1000" cy="600" r="400" fill="rgba(155,0,20,0.05)"/></svg>') no-repeat center;
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: heroFadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #9B0014;
+            background: rgba(255, 255, 255, 0.05);
+            animation: iconPulseIn 2s ease infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes iconPulseIn {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 0, 20, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(155, 0, 20, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 0, 20, 0); }
+        }
+
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: titleSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes titleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                filter: blur(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: subtitleSlideIn 1s ease forwards;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes subtitleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                filter: blur(0);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-alt {
+            background: rgba(30, 30, 30, 0.5);
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.125);
+            padding-bottom: 1rem;
+        }
+
+        /* Stats Counter */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #9B0014;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Spotlight Section */
+        .spotlight {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .spotlight.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .spotlight-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .spotlight-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        .spotlight-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .spotlight-content {
+            flex: 1;
+        }
+
+        .spotlight-content h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .spotlight-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .spotlight-content li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        /* Rover Cards */
+        .rovers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .rover-card {
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .rover-card:hover {
+            transform: translateY(-10px);
+            border-color: #9B0014;
+            box-shadow: 0 10px 30px rgba(155, 0, 20, 0.3);
+        }
+
+        .rover-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .rover-card-content {
+            padding: 2rem;
+        }
+
+        .rover-card h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: linear-gradient(135deg, #15242B 0%, #1e1e1e 100%);
+            padding: 6rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.125);
+            border-radius: 5px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #9B0014;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #9B0014;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn:hover {
+            background: #b50018;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 0, 20, 0.4);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.125);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #9B0014;
+        }
+
+        .contact-item a {
+            color: #9B0014;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #b50018;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: inline-block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #9B0014;
+                padding: 2.5rem 2rem;
+                border-radius: 10px;
+                z-index: 1000;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+                gap: 0.5rem;
+                min-width: 280px;
+                max-height: calc(100vh - 7rem);
+                overflow-y: auto;
+                animation: menuSlideIn 0.3s ease;
+            }
+
+            @keyframes menuSlideIn {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50%) translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(-50%) translateY(0);
+                }
+            }
+
+            .nav-links.active a {
+                padding: 1rem 1.5rem;
+                width: 100%;
+                border-radius: 5px;
+                text-align: center;
+                transition: all 0.2s ease;
+            }
+
+            .nav-links.active a::after {
+                display: none;
+            }
+
+            .nav-links.active a:hover {
+                background: #7a0010;
+                transform: translateX(5px);
+            }
+
+            .menu-overlay.active {
+                display: block;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            .spotlight {
+                flex-direction: column !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .rovers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                gap: 2rem;
+                grid-template-columns: 1fr;
+            }
+
+            .counter {
+                font-size: 3rem;
+            }
+
+            .spotlight-content h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-links.active {
+                min-width: 90%;
+                padding: 2rem 1rem;
+            }
+
+            .counter {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-overlay" onclick="closeMenu()"></div>
+
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">Morpheus Team</a>
+            <button class="menu-toggle" onclick="toggleMenu(event)">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#chi-siamo">Chi siamo</a>
+                <a href="#obiettivo">Obiettivi</a>
+                <a href="#dipartimenti">Dipartimenti</a>
+                <a href="#rover">Rover</a>
+                <a href="#contatti">Contattaci</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1>Morpheus Team</h1>
+            <p>University of Padua Mars Rover Team<br>Building the future of space exploration robotics</p>
+        </div>
+    </section>
+
+    <section class="section" id="chi-siamo">
+        <div class="section-inner">
+            <h2 class="section-title">Chi Siamo</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 2rem;">
+                MORPHEUS is a student-led rover project dedicated to designing, engineering, and building
+										a next-generation robotic explorer for the European Rover Challenge (ERC) in Kraków,
+										Poland.
+										The competition recreates a realistic Martian landscape where university teams from around
+										Europe test their rover in mission scenarios inspired by real Mars expeditions.
+										Our project blends mechanical engineering, electronics, embedded systems, robotics,
+										autonomy, and computer science into a single integrated mission.
+										Working with MORPHEUS offers students the opportunity to participate in a space-themed
+										robotics challenge, contribute to a real engineering system, earn a project-based Thesis, and
+										receive an official Open Badge certification from the University recognizing their work and
+										skills.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="section-inner">
+            <h2 class="section-title">Quanti Siamo</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="counter" data-target="40">0</span>
+                    <p class="stat-label">Studenti</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="7">0</span>
+                    <p class="stat-label">Dipartimenti</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="10">0</span>
+                    <p class="stat-label">Nazionalità</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="obiettivo">
+        <div class="section-inner">
+            <div class="spotlight reverse">
+                <div class="spotlight-image">
+                    <img src="images/pic01.jpg" alt="European Rover Challenge" />
+                </div>
+                <div class="spotlight-content">
+                    <h2>European Rover Challenge</h2>
+                    <p>L'European Rover Challenge (ERC) è una delle più grandi e prestigiose competizioni di robotica al mondo, focalizzata sulle tecnologie di esplorazione spaziale. Tenuta annualmente in Polonia, l'ERC riunisce squadre provenienti da università, istituti di ricerca e aziende private per progettare, costruire e operare rover robotici capaci di eseguire compiti in ambienti extraterrestri simulati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="dipartimenti">
+        <div class="section-inner">
+            <h2 class="section-title">I Nostri Dipartimenti</h2>
+            
+            <div class="spotlight" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/meccanica.png" alt="Meccanica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2>Meccanica</h2>
+                    <p>Il Team Meccanico è responsabile della progettazione dell'intera architettura meccanica del rover, dal telaio e dalle sospensioni ai sottosistemi termici e strutturali.
+                    Trasformiamo i requisiti della missione in progetti robusti e ottimizzati utilizzando simulazioni avanzate,
+                    studi cinematici e flussi di lavoro automatizzati SolidWorks.
+                    Il nostro lavoro integra:</p>
+                    <ul>
+                        <li>Progettazione di studi parametrici e ottimizzazione meccanica (per componenti chiave come linkers, bracci ed elementi delle sospensioni)</li>
+                        <li>Analisi del movimento per la mobilità e la dinamica dei meccanismi</li>
+                        <li>Simulazione strutturale e termica avanzata (FEM)</li>
+                        <li>Simulazione del flusso e modellazione del trasferimento termico (CFD)</li>
+                        <li>Flussi di lavoro di progettazione automatizzati e strumenti API SolidWorks</li>
+                        <li>Visualizzazione, rendering e documentazione di alta qualità (supportati da SolidWorks PDM per un controllo di versione pulito e la collaborazione a livello di team)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="spotlight reverse" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/elettronica.jpg" alt="Elettronica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2>Elettronica</h2>
+                    <p>Il Team Elettronica è responsabile della progettazione dell'intera spina dorsale di alimentazione e comunicazione del rover.<br>
+                    Sviluppiamo mission-critical hardware che assicura che ogni sottosistema – dalla mobilità al braccio robotico e ai payload scientifici – operi con la massima precisione e affidabilità.<br><br>
+                    Il nostro lavoro integra e gestisce:</p>
+                    <ul>
+                        <li>Architettura di Alimentazione Distribuita con isolamento intelligente dei guasti.</li>
+                        <li>Rete di Comunicazione CAN/CANopen ad alta affidabilità.</li>
+                        <li>Stack di controllo embedded modulare (basato su STM32 e Jetson) con fusione di sensori.</li>
+                        <li>Sistema Adattivo di Gestione dell'Alimentazione con regolazione dinamica del bus (in grado di regolare la tensione in tempo reale, prevedere il carico termico e ottimizzare l'energia in modalità missione).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="spotlight" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/informatica.png" alt="Informatica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2>Informatica</h2>
+                    <p>Il Team Informatico è responsabile dell'intero livello di intelligenza software del rover, dal controllo di basso livello all'autonomia di alto livello.<br>
+                    Progettiamo, implementiamo e integriamo il framework computazionale che consente al rover di percepire l'ambiente circostante, prendere decisioni informate ed eseguire missioni complesse con precisione e resilienza.<br><br>
+                    Il nostro lavoro comprende:</p>
+                    <ul>
+                        <li>Framework di navigazione autonoma con SLAM e Sensor Fusion Development</li>
+                        <li>Moduli di percezione e decisione basati su reti neurali (per la classificazione del terreno, il rilevamento dei pericoli e la logica di navigazione adattiva)</li>
+                        <li>Architettura di controllo in tempo reale per mobilità e manipolazione (per motori e braccio robotico)</li>
+                        <li>Infrastruttura software distribuita ROS 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="rover">
+        <div class="section-inner">
+            <h2 class="section-title">Rover Collection</h2>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">Below you will find the entire collection of Mars rovers built by the Morpheus team in recent years</p>
+            <div class="rovers-grid">
+                <div class="rover-card">
+                    <img src="./imagesProject/Morpheus1.jpg" alt="Morpheus 1" />
+                    <div class="rover-card-content">
+                        <h3>Morpheus 1</h3>
+                        <p>The team's first prototype was built in 2018, using Arduino protocols to manage the various integrated systems. Dimensions are 820 x 1320 x 1000 mm and the estimated weight is 46 kg.</p>
+                    </div>
+                </div>
+                <div class="rover-card">
+                    <img src="./imagesProject/Morpheus2.png" alt="Morpheus 2" />
+                    <div class="rover-card-content">
+                        <h3>Morpheus 2</h3>
+                        <p>The team's second prototype, which has yet to be built, is similar to the previous one, with the addition of UAVs. Its estimated footprint is 1300 x 1100 x 600 mm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contatti">
+        <div class="contact-grid">
+            <div>
+                <h2 class="section-title">Get in touch</h2>
+                <p style="margin: 1.5rem 0; line-height: 1.8;">Feel free to contact us: we will be glad to provide you with information. Use the form below or follow us on our social media channels.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full name:</label>
+                        <input type="text" id="name" name="name" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <strong>Dipartimento di Ingegneria Industriale</strong><br>
+                        <a href="https://www.google.com/maps/place/Complesso+di+Ingegneria+Industriale" target="_blank">Via Venezia, 1 – 35131 Padova (Italy)</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <a href="mailto:rover.unipd@gmail.com">rover.unipd@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                    <div>
+                        <a href="https://www.instagram.com/morpheus.unipd/" target="_blank">instagram.com/morpheus.unipd</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div>
+                        <a href="https://it.linkedin.com/company/morpheus-team-unipd" target="_blank">linkedin.com/morpheus.team.unipd</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-user-plus"></i></div>
+                    <div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoBqwgTXvPUJMrYC8BNGIkyYxEpltJdzCcBKwR70RxFEfuxw/viewform" target="_blank">Link recruitment 2026</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 All rights reserved. | Design: Unipd students</p>
+    </footer>
+
+    <script>
+        // Menu toggle
+        function toggleMenu(event) {
+            event.preventDefault();
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.menu-overlay');
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.menu-overlay');
+            if (navLinks) navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        }
+
+        // Close menu on link click
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove loading class after a short delay
+            setTimeout(() => {
+                document.body.classList.remove('is-loading');
+            }, 100);
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    closeMenu();
+                    
+                    if (href && href.startsWith('#') && href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            setTimeout(() => {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }, 300);
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Animate counters when visible
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        counters.forEach(counter => {
+                            animateCounter(counter);
+                        });
+                        counterObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            // Observe the stats section instead of individual counters
+            const statsSection = document.querySelector('.stats-grid');
+            if (statsSection) {
+                counterObserver.observe(statsSection);
+            }
+
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+                
+                // Create mailto link
+                //const mailtoLink = mailto:rover.unipd@gmail.com?subject=Contatto da ${name}&body=${encodeURIComponent(message)}%0A%0ADa: ${email};
+                window.location.href = mailtoLink;
+                
+                alert('Message sent!');
+                this.reset();
+            });
+        });
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+    </script>
+</body>
 </html>
