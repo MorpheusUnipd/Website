@@ -29,6 +29,47 @@
         body.is-loading .hero-content {
             opacity: 0;
         }
+		/* Sponsors */
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .sponsors-grid a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        
+        .sponsors-grid img {
+            max-width: 100%;
+            max-height: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            transition: filter 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+        }
+        
+        .sponsors-grid a:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+        }
+        
+        .sponsors-grid a:hover img {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.03);
+        }
 
         /* Header */
         header {
@@ -673,6 +714,7 @@
                 <a href="#obiettivo">Obiettivi</a>
                 <a href="#dipartimenti">Dipartimenti</a>
                 <a href="#rover">Rover</a>
+				<a href="#">Sponsor</a>
                 <a href="#contatti">Contattaci</a>
             </div>
         </nav>
@@ -712,15 +754,15 @@
             <h2 class="section-title">Quanti Siamo</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="counter" data-target="40">0</span>
+                    <span class="counter" data-target="20">0</span>
                     <p class="stat-label">Studenti</p>
                 </div>
                 <div class="stat-item">
-                    <span class="counter" data-target="7">0</span>
+                    <span class="counter" data-target="4">0</span>
                     <p class="stat-label">Dipartimenti</p>
                 </div>
                 <div class="stat-item">
-                    <span class="counter" data-target="10">0</span>
+                    <span class="counter" data-target="4">0</span>
                     <p class="stat-label">Nazionalità</p>
                 </div>
             </div>
@@ -731,7 +773,7 @@
         <div class="section-inner">
             <div class="spotlight reverse">
                 <div class="spotlight-image">
-                    <img src="images/pic01.jpg" alt="European Rover Challenge" />
+                    <a href="https://roverchallenge.eu/" target="_blank"><img src="images/erc.png" alt="European Rover Challenge" /></a>
                 </div>
                 <div class="spotlight-content">
                     <h2>European Rover Challenge</h2>
@@ -810,19 +852,30 @@
             <p style="font-size: 1.1rem; margin-top: 1rem;">Below you will find the entire collection of Mars rovers built by the Morpheus team in recent years</p>
             <div class="rovers-grid">
                 <div class="rover-card">
-                    <img src="./imagesProject/Morpheus1.jpg" alt="Morpheus 1" />
+                    <img src="./images/Morpheus1.jpg" alt="Morpheus 1" />
                     <div class="rover-card-content">
                         <h3>Morpheus 1</h3>
                         <p>The team's first prototype was built in 2018, using Arduino protocols to manage the various integrated systems. Dimensions are 820 x 1320 x 1000 mm and the estimated weight is 46 kg.</p>
                     </div>
                 </div>
                 <div class="rover-card">
-                    <img src="./imagesProject/Morpheus2.png" alt="Morpheus 2" />
+                    <img src="./images/Morpheus2.png" alt="Morpheus 2" />
                     <div class="rover-card-content">
                         <h3>Morpheus 2</h3>
                         <p>The team's second prototype, which has yet to be built, is similar to the previous one, with the addition of UAVs. Its estimated footprint is 1300 x 1100 x 600 mm.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+	<section class="section section-alt" id="sponsor">
+        <div class="section-inner">
+            <h2 class="section-title">Sponsor</h2>
+            <div class="sponsors-grid">
+                <a href="https://www.unipd.it/" aria-label="Sponsor 1" target="_blank"><img src="images/UNIPD_testo_bianco.png" alt="Sponsor 1"></a>
+                <a href="https://www.dii.unipd.it/" aria-label="Sponsor 2" target="_blank"><img src="images/dii_testo_bianco.png" alt="Sponsor 2"></a>
+                <a href="https://cisas.unipd.it/" aria-label="Sponsor 3" target="_blank"><img src="images/CISAS_bianco.png" alt="Sponsor 3"></a>
             </div>
         </div>
     </section>
@@ -836,10 +889,6 @@
                     <div class="form-group">
                         <label for="name">Full name:</label>
                         <input type="text" id="name" name="name" placeholder="Full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
@@ -961,22 +1010,19 @@
                 counterObserver.observe(statsSection);
             }
 
-            // Form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const formData = new FormData(this);
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const message = formData.get('message');
-                
-                // Create mailto link
-                //const mailtoLink = mailto:rover.unipd@gmail.com?subject=Contatto da ${name}&body=${encodeURIComponent(message)}%0A%0ADa: ${email};
-                window.location.href = mailtoLink;
-                
-                alert('Message sent!');
-                this.reset();
-            });
-        });
+			// Form submission
+			document.getElementById('contactForm').addEventListener('submit', function(e) {
+				e.preventDefault();
+				const formData = new FormData(this);
+				const name = formData.get('name');
+				//const email = formData.get('email');
+				const message = formData.get('message');
+				
+				// Create mailto link
+				const mailtoLink = `mailto:rover.unipd@gmail.com?subject= Contattato da ${name} dal sito &body=${encodeURIComponent(message)}`;
+				window.location.href = mailtoLink;
+			});
+		});
 
         function animateCounter(element) {
             const target = parseInt(element.getAttribute('data-target'));
