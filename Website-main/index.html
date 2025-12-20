@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpheus Team - University of Padua Rover Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js"></script>
+</head>
+
+<body>
+    <div class="menu-overlay" onclick="closeMenu()"></div>
+
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">Morpheus Team</a>
+            <button class="menu-toggle" onclick="toggleMenu(event)">
+                <i class="fas fa-bars"></i> Menu
+            </button>
+            <div class="nav-links">
+                <a href="#home" data-i18n="nav.home">Home</a>
+                <a href="#chi-siamo" data-i18n="nav.about">Chi siamo</a>
+                <a href="#dipartimenti" data-i18n="nav.departments">Dipartimenti</a>
+                <a href="#rover" data-i18n="nav.rover">Rover</a>
+                <a href="#sponsor" data-i18n="nav.sponsors">Sponsor</a>
+                <a href="#contatti" data-i18n="nav.contact">Contattaci</a>
+                <button onclick="changeLanguage()">IT</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1 data-i18n="hero.title">Morpheus Team</h1>
+            <p data-i18n="hero.subtitle" data-i18n-html="true">University of Padua Mars Rover Team<br>Building the future of space exploration robotics</p>
+        </div>
+    </section>
+
+    <section class="section" id="chi-siamo">
+        <div class="section-inner">
+            <h2 class="section-title" data-i18n="about.title">Chi Siamo</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 2rem;" data-i18n="about.text">
+                MORPHEUS is a student-led rover project dedicated to designing, engineering, and building a next-generation robotic explorer for the European Rover Challenge (ERC) in Kraków, Poland. The competition recreates a realistic Martian landscape where university
+                teams from around Europe test their rover in mission scenarios inspired by real Mars expeditions. Our project blends mechanical engineering, electronics, embedded systems, robotics, autonomy, and computer science into a single integrated
+                mission. Working with MORPHEUS offers students the opportunity to participate in a space-themed robotics challenge, contribute to a real engineering system, earn a project-based Thesis, and receive an official Open Badge certification
+                from the University recognizing their work and skills.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="section-inner">
+            <h2 class="section-title" data-i18n="stats.title">Quanti Siamo</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="counter" data-target="20">0</span>
+                    <p class="stat-label" data-i18n="stats.students">Studenti</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="4">0</span>
+                    <p class="stat-label" data-i18n="stats.departments">Dipartimenti</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="4">0</span>
+                    <p class="stat-label" data-i18n="stats.nationalities">Nazionalità</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="obiettivo">
+        <div class="section-inner">
+            <div class="spotlight reverse">
+                <div class="spotlight-image">
+                    <a href="https://roverchallenge.eu/" target="_blank"><img src="images/erc.png" alt="European Rover Challenge" /></a>
+                </div>
+                <div class="spotlight-content">
+                    <h2 data-i18n="objectives.title">European Rover Challenge</h2>
+                    <p data-i18n="objectives.text">L'European Rover Challenge (ERC) è una delle più grandi e prestigiose competizioni di robotica al mondo, focalizzata sulle tecnologie di esplorazione spaziale. Tenuta annualmente in Polonia, l'ERC riunisce squadre provenienti da università,
+                        istituti di ricerca e aziende private per progettare, costruire e operare rover robotici capaci di eseguire compiti in ambienti extraterrestri simulati.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="dipartimenti">
+        <div class="section-inner">
+            <h2 class="section-title" data-i18n="departments.title">I Nostri Dipartimenti</h2>
+
+            <div class="spotlight" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/meccanica.png" alt="Meccanica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2 data-i18n="departments.mechanical.title">Meccanica</h2>
+                    <p data-i18n="departments.mechanical.text">Il Team Meccanico è responsabile della progettazione dell'intera architettura meccanica del rover, dal telaio e dalle sospensioni ai sottosistemi termici e strutturali. Trasformiamo i requisiti della missione in progetti robusti e
+                        ottimizzati utilizzando simulazioni avanzate, studi cinematici e flussi di lavoro automatizzati SolidWorks. Il nostro lavoro integra:</p>
+                    <ul>
+                        <li data-i18n="departments.mechanical.list.0">Progettazione di studi parametrici e ottimizzazione meccanica (per componenti chiave come linkers, bracci ed elementi delle sospensioni)</li>
+                        <li data-i18n="departments.mechanical.list.1">Analisi del movimento per la mobilità e la dinamica dei meccanismi</li>
+                        <li data-i18n="departments.mechanical.list.2">Simulazione strutturale e termica avanzata (FEM)</li>
+                        <li data-i18n="departments.mechanical.list.3">Simulazione del flusso e modellazione del trasferimento termico (CFD)</li>
+                        <li data-i18n="departments.mechanical.list.4">Flussi di lavoro di progettazione automatizzati e strumenti API SolidWorks</li>
+                        <li data-i18n="departments.mechanical.list.5">Visualizzazione, rendering e documentazione di alta qualità (supportati da SolidWorks PDM per un controllo di versione pulito e la collaborazione a livello di team)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="spotlight reverse" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/elettronica.jpg" alt="Elettronica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2 data-i18n="departments.electronics.title">Elettronica</h2>
+                    <p data-i18n="departments.electronics.text" data-i18n-html="true">Il Team Elettronica è responsabile della progettazione dell'intera spina dorsale di alimentazione e comunicazione del rover.<br> Sviluppiamo mission-critical hardware che assicura che ogni sottosistema – dalla mobilità al braccio robotico
+                        e ai payload scientifici – operi con la massima precisione e affidabilità.<br><br> Il nostro lavoro integra e gestisce:</p>
+                    <ul>
+                        <li data-i18n="departments.electronics.list.0">Architettura di Alimentazione Distribuita con isolamento intelligente dei guasti.</li>
+                        <li data-i18n="departments.electronics.list.1">Rete di Comunicazione CAN/CANopen ad alta affidabilità.</li>
+                        <li data-i18n="departments.electronics.list.2">Stack di controllo embedded modulare (basato su STM32 e Jetson) con fusione di sensori.</li>
+                        <li data-i18n="departments.electronics.list.3">Sistema Adattivo di Gestione dell'Alimentazione con regolazione dinamica del bus (in grado di regolare la tensione in tempo reale, prevedere il carico termico e ottimizzare l'energia in modalità missione).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="spotlight" style="margin-top: 3rem;">
+                <div class="spotlight-image">
+                    <img src="images/informatica.png" alt="Informatica" />
+                </div>
+                <div class="spotlight-content">
+                    <h2 data-i18n="departments.computer.title">Informatica</h2>
+                    <p data-i18n="departments.computer.text" data-i18n-html="true">Il Team Informatico è responsabile dell'intero livello di intelligenza software del rover, dal controllo di basso livello all'autonomia di alto livello.<br> Progettiamo, implementiamo e integriamo il framework computazionale che consente
+                        al rover di percepire l'ambiente circostante, prendere decisioni informate ed eseguire missioni complesse con precisione e resilienza.<br><br> Il nostro lavoro comprende:</p>
+                    <ul>
+                        <li data-i18n="departments.computer.list.0">Framework di navigazione autonoma con SLAM e Sensor Fusion Development</li>
+                        <li data-i18n="departments.computer.list.1">Moduli di percezione e decisione basati su reti neurali (per la classificazione del terreno, il rilevamento dei pericoli e la logica di navigazione adattiva)</li>
+                        <li data-i18n="departments.computer.list.2">Architettura di controllo in tempo reale per mobilità e manipolazione (per motori e braccio robotico)</li>
+                        <li data-i18n="departments.computer.list.3">Infrastruttura software distribuita ROS 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="rover">
+        <div class="section-inner">
+            <h2 class="section-title" data-i18n="rover.title">Rover Collection</h2>
+            <p style="font-size: 1.1rem; margin-top: 1rem;" data-i18n="rover.description">Below you will find the entire collection of Mars rovers built by the Morpheus team in recent years</p>
+            <div class="rovers-grid">
+                <div class="rover-card">
+                    <img src="./images/Morpheus1.jpg" alt="Morpheus 1" />
+                    <div class="rover-card-content">
+                        <h3 data-i18n="rover.morpheus1.title">Morpheus 1</h3>
+                        <p data-i18n="rover.morpheus1.text">The team's first prototype was built in 2018, using Arduino protocols to manage the various integrated systems. Dimensions are 820 x 1320 x 1000 mm and the estimated weight is 46 kg.</p>
+                    </div>
+                </div>
+                <div class="rover-card">
+                    <img src="./images/Morpheus2.png" alt="Morpheus 2" />
+                    <div class="rover-card-content">
+                        <h3 data-i18n="rover.morpheus2.title">Morpheus 2</h3>
+                        <p data-i18n="rover.morpheus2.text">The team's second prototype, which has yet to be built, is similar to the previous one, with the addition of UAVs. Its estimated footprint is 1300 x 1100 x 600 mm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="sponsor">
+        <div class="section-inner">
+            <h2 class="section-title" data-i18n="sponsors.title">Sponsor</h2>
+            <div class="sponsors-grid">
+                <a href="https://www.unipd.it/" aria-label="Sponsor 1" target="_blank"><img src="images/UNIPD_testo_bianco.png" alt="Sponsor 1"></a>
+                <a href="https://www.dii.unipd.it/" aria-label="Sponsor 2" target="_blank"><img src="images/dii_testo_bianco.png" alt="Sponsor 2"></a>
+                <a href="https://cisas.unipd.it/" aria-label="Sponsor 3" target="_blank"><img src="images/CISAS_bianco.png" alt="Sponsor 3"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contatti">
+        <div class="contact-grid">
+            <div>
+                <h2 class="section-title" data-i18n="contact.title">Get in touch</h2>
+                <p style="margin: 1.5rem 0; line-height: 1.8;" data-i18n="contact.text">Feel free to contact us: we will be glad to provide you with information. Use the form below or follow us on our social media channels.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.name">Full name:</label>
+                        <input type="text" id="name" name="name" placeholder="Full name" data-i18n-placeholder="contact.namePlaceholder" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-i18n="contact.send">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <strong>Dipartimento di Ingegneria Industriale</strong><br>
+                        <a href="https://www.google.com/maps/place/Complesso+di+Ingegneria+Industriale" target="_blank">Via Venezia, 1 – 35131 Padova (Italy)</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <a href="mailto:rover.unipd@gmail.com">rover.unipd@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                    <div>
+                        <a href="https://www.instagram.com/morpheus.unipd/" target="_blank">instagram.com/morpheus.unipd</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div>
+                        <a href="https://it.linkedin.com/company/morpheus-team-unipd" target="_blank">linkedin.com/morpheus.team.unipd</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-user-plus"></i></div>
+                    <div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoBqwgTXvPUJMrYC8BNGIkyYxEpltJdzCcBKwR70RxFEfuxw/viewform" target="_blank">Link recruitment 2026</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div>
+                        <strong>Prof. Sebastiano Chiodini</strong><br>Faculty Advisor Morpheus Team<br>Department of Industrial Engineering - University of Padova<br>Tel: +39 049 827 6802<br>Email: sebastiano.chiodini@unipd.it
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 All rights reserved. | Design: Unipd students</p>
+    </footer>
+</body>
+
+</html>
