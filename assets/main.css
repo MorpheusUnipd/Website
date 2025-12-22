@@ -175,130 +175,129 @@
      backdrop-filter: blur(5px);
      z-index: 999;
  }
+ 
  /* Hero Banner */
- 
- .hero {
-     min-height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     padding: 8rem 2rem 4rem;
-     background: linear-gradient(135deg, #15242B 0%, #1e1e1e 100%);
-     position: relative;
-     overflow: hidden;
- }
- 
- .hero::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="300" fill="rgba(155,0,20,0.1)"/><circle cx="1000" cy="600" r="400" fill="rgba(155,0,20,0.05)"/></svg>') no-repeat center;
-     background-size: cover;
-     opacity: 0.5;
- }
- 
- .hero-content {
-     max-width: 800px;
-     position: relative;
-     z-index: 1;
-     opacity: 0;
-     animation: heroFadeIn 1.5s ease forwards;
-     animation-delay: 0.3s;
- }
- 
- @keyframes heroFadeIn {
-     from {
-         opacity: 0;
-         transform: translateY(50px);
-     }
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
- 
- .hero-icon {
-     width: 120px;
-     height: 120px;
-     margin: 0 auto 2rem;
-     border: 3px solid rgba(255, 255, 255, 0.2);
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     font-size: 3rem;
-     color: #9B0014;
-     background: rgba(255, 255, 255, 0.05);
-     animation: iconPulseIn 2s ease infinite;
-     animation-delay: 1s;
- }
- 
- @keyframes iconPulseIn {
-     0% {
-         transform: scale(1);
-         box-shadow: 0 0 0 0 rgba(155, 0, 20, 0.7);
-     }
-     50% {
-         transform: scale(1.05);
-         box-shadow: 0 0 0 20px rgba(155, 0, 20, 0);
-     }
-     100% {
-         transform: scale(1);
-         box-shadow: 0 0 0 0 rgba(155, 0, 20, 0);
-     }
- }
- 
- .hero h1 {
-     font-family: 'Raleway', sans-serif;
-     font-size: 3rem;
-     font-weight: 700;
-     letter-spacing: 0.1em;
-     text-transform: uppercase;
-     margin-bottom: 1rem;
-     opacity: 0;
-     animation: titleSlideIn 1s ease forwards;
-     animation-delay: 0.6s;
- }
- 
- @keyframes titleSlideIn {
-     from {
-         opacity: 0;
-         transform: translateX(-50px);
-         filter: blur(10px);
-     }
-     to {
-         opacity: 1;
-         transform: translateX(0);
-         filter: blur(0);
-     }
- }
- 
- .hero p {
-     font-size: 1.1rem;
-     color: rgba(255, 255, 255, 0.8);
-     margin-bottom: 2rem;
-     line-height: 1.8;
-     opacity: 0;
-     animation: subtitleSlideIn 1s ease forwards;
-     animation-delay: 0.9s;
- }
- 
- @keyframes subtitleSlideIn {
-     from {
-         opacity: 0;
-         transform: translateX(50px);
-         filter: blur(10px);
-     }
-     to {
-         opacity: 1;
-         transform: translateX(0);
-         filter: blur(0);
-     }
- }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background-image: url('/images/sfondo-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: heroFadeIn 1.5s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            animation: iconPulseIn 2s ease infinite;
+            animation-delay: 1s;
+            overflow: hidden;
+        }
+
+        .hero-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes iconPulseIn {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 0, 20, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(155, 0, 20, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 0, 20, 0); }
+        }
+
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: titleSlideIn 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes titleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                filter: blur(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0;
+            animation: subtitleSlideIn 1s ease forwards;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes subtitleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+                filter: blur(0);
+            }
+        }
  /* Sections */
  
  .section {
