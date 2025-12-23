@@ -12,7 +12,8 @@ const translations = {
         },
         hero: {
             title: "Morpheus Team",
-            subtitle: "University of Padua Mars Rover Team<br>Costruiamo il futuro della robotica per l'esplorazione spaziale"
+            subtitle: "University of Padua Mars Rover Team<br>Costruiamo il futuro della robotica per l'esplorazione spaziale",
+            scroll: "Scorri"
         },
         about: {
             title: "Chi Siamo",
@@ -100,7 +101,8 @@ const translations = {
         },
         hero: {
             title: "Morpheus Team",
-            subtitle: "University of Padua Mars Rover Team<br>Building the future of space exploration robotics"
+            subtitle: "University of Padua Mars Rover Team<br>Building the future of space exploration robotics",
+            scroll: "Scroll"
         },
         about: {
             title: "About Us",
@@ -196,7 +198,7 @@ const i18n = {
         // Set up language button
         const langBtn = document.querySelector('button[onclick="changeLanguage()"]');
         if (langBtn) {
-            langBtn.textContent = this.currentLang === 'it' ? 'IT' : 'EN';
+            langBtn.textContent = this.currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
         }
     },
 
@@ -208,7 +210,7 @@ const i18n = {
         // Update button text
         const langBtn = document.querySelector('button[onclick="changeLanguage()"]');
         if (langBtn) {
-            langBtn.textContent = this.currentLang === 'it' ? 'IT' : 'EN';
+            langBtn.textContent = this.currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
         }
 
         // Update HTML lang attribute

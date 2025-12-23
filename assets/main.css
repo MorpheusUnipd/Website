@@ -677,6 +677,18 @@
      .spotlight-content h2 {
          font-size: 1.3rem;
      }
+     .scroll-indicator {
+        bottom: 2rem;
+    }
+
+    .scroll-arrow {
+        width: 25px;
+        height: 40px;
+    }
+    
+    .scroll-text {
+        font-size: 0.7rem;
+    }
  }
  
  @media (max-width: 480px) {
@@ -697,3 +709,86 @@
          font-size: 2.5rem;
      }
  }
+
+ /* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    animation: scrollIndicatorFade 1.5s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+@keyframes scrollIndicatorFade {
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #9B0014;
+    border-radius: 50%;
+    animation: scrollDot 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes scrollDot {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+.scroll-indicator:hover .scroll-arrow {
+    border-color: #9B0014;
+}
+
+.scroll-indicator:hover .scroll-text {
+    color: #9B0014;
+}
