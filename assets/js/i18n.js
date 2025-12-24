@@ -22,7 +22,7 @@ const translations = {
         stats: {
             title: "Quanti Siamo",
             students: "Studenti",
-            departments: "Dipartimenti",
+            departments: "Dipartimenti universitari coinvolti",
             nationalities: "Nazionalità"
         },
         objectives: {
@@ -62,6 +62,10 @@ const translations = {
                     "Architettura di controllo in tempo reale per mobilità e manipolazione (per motori e braccio robotico)",
                     "Infrastruttura software distribuita ROS 2"
                 ]
+            },
+            organigram: {
+                title: "Organigramma",
+                caption: "Organigramma del team"
             }
         },
         rover: {
@@ -111,7 +115,7 @@ const translations = {
         stats: {
             title: "Our Numbers",
             students: "Students",
-            departments: "Departments",
+            departments: "University departments involved",
             nationalities: "Nationalities"
         },
         objectives: {
@@ -151,6 +155,10 @@ const translations = {
                     "Real-time control architecture for mobility and manipulation (for motors and robotic arm)",
                     "Distributed ROS 2 software infrastructure"
                 ]
+            },
+            organigram: {
+                title: "Organigram",
+                caption: "Team Organizational Chart"
             }
         },
         rover: {
@@ -195,10 +203,12 @@ const i18n = {
         // Apply initial translations
         this.applyTranslations();
 
-        // Set up language button
-        const langBtn = document.querySelector('button[onclick="changeLanguage()"]');
+        // Set up language button (use innerHTML with images so flags display)
+        const langBtn = document.getElementById('langBtn') || document.querySelector('button[onclick="changeLanguage()"]');
         if (langBtn) {
-            langBtn.textContent = this.currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
+            langBtn.innerHTML = this.currentLang === 'it' ?
+                '<img class="flag" src="https://flagcdn.com/24x18/gb.png" alt="EN flag"> EN' :
+                '<img class="flag" src="https://flagcdn.com/24x18/it.png" alt="IT flag"> IT';
         }
     },
 
@@ -210,7 +220,9 @@ const i18n = {
         // Update button text
         const langBtn = document.querySelector('button[onclick="changeLanguage()"]');
         if (langBtn) {
-            langBtn.textContent = this.currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
+            langBtn.innerHTML = this.currentLang === 'it' ?
+                '<img class="flag" src="https://flagcdn.com/24x18/gb.png" alt="EN flag"> EN' :
+                '<img class="flag" src="https://flagcdn.com/24x18/it.png" alt="IT flag"> IT';
         }
 
         // Update HTML lang attribute
