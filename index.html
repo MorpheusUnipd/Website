@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/main.css">
     <script src="assets/js/main.js"></script>
     <script src="assets/js/i18n.js"></script>
+    <meta name='author' content='Morpheus Team'>
+    <meta name='description' content='Home page'>
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 </head>
 
 <body>
@@ -27,7 +30,9 @@
                 <a href="#rover" data-i18n="nav.rover">Rover</a>
                 <a href="#sponsor" data-i18n="nav.sponsors">Sponsor</a>
                 <a id="contattaci" href="#contatti" data-i18n="nav.contact">Unisciti al Team</a>
-                <button onclick="changeLanguage()">IT</button>
+                <button id="langBtn" onclick="changeLanguage()" aria-label="Change language">
+                    <img class="flag" src="https://flagcdn.com/24x18/it.png" alt="IT flag"> IT
+                </button>
             </div>
         </nav>
     </header>
@@ -68,7 +73,7 @@
                 </div>
                 <div class="stat-item">
                     <span class="counter" data-target="4">0</span>
-                    <p class="stat-label" data-i18n="stats.departments">Dipartimenti</p>
+                    <p class="stat-label" data-i18n="stats.departments">Dipartimenti </p>
                 </div>
                 <div class="stat-item">
                     <span class="counter" data-target="4">0</span>
@@ -79,7 +84,7 @@
     </section>
 
     <section class="section" id="obiettivo">
-        <div class="section-inner">        
+        <div class="section-inner">
             <div class="spotlight reverse">
                 <div class="spotlight-image">
                     <a href="https://roverchallenge.eu/" target="_blank"><img src="images/erc.png" alt="European Rover Challenge" /></a>
@@ -117,6 +122,7 @@
             </div>
 
             <div class="spotlight reverse" style="margin-top: 3rem;">
+
                 <div class="spotlight-image">
                     <img src="images/elettronica.jpg" alt="Elettronica" />
                 </div>
@@ -148,6 +154,16 @@
                         <li data-i18n="departments.computer.list.3">Infrastruttura software distribuita ROS 2</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="spotlight" style="margin-top: 3rem;">
+                <figure class="organigram">
+                    <h2 class="section-title" data-i18n="departments.organigram.title">Organigramma</h2>
+                    <div class="organigram-wrap">
+                        <img src="images/organigramma.jpg" alt="Organigramma" />
+                    </div>
+                    <figcaption data-i18n="departments.organigram.caption">Organigramma del team</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -208,7 +224,7 @@
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
                         <strong>Dipartimento di Ingegneria Industriale</strong><br>
-                        <a href="https://www.google.com/maps/place/Complesso+di+Ingegneria+Industriale" target="_blank">Via Venezia, 1 – 35131 Padova (Italy)</a>
+                        <a href="https://maps.app.goo.gl/WWVr7VeECGNdBrpk6" target="_blank">Via Venezia, 1 – 35131 Padova (Italy)</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -232,7 +248,7 @@
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fas fa-user-plus"></i></div>
                     <div>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoBqwgTXvPUJMrYC8BNGIkyYxEpltJdzCcBKwR70RxFEfuxw/viewform" target="_blank">Link recruitment 2026</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrKTGWiMhl9nVWRvkQrJD3f-8JjMPFy8L71D8y89dBNwhsrQ/viewform" target="_blank">Link recruitment 2026</a>
                     </div>
                 </div>
                 <div class="contact-item">
