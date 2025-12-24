@@ -102,6 +102,7 @@
      display: flex;
      gap: 2rem;
      list-style: none;
+     align-items: flex-end;
  }
  
  .nav-links a,
@@ -137,6 +138,14 @@
  .nav-links a:hover::after,
  .nav-links button:hover::after {
      width: 100%;
+ }
+
+ .nav-links #contattaci {
+    color: #9B0014;
+ }
+
+ .nav-links #contattaci:hover:after {
+    background: white;
  }
  
  .menu-toggle {
@@ -623,6 +632,13 @@
      .nav-links.active a:hover,
      .nav-links.active button:hover {
          background: #7a0010;
+         transform: translateX(5px);
+     }
+     .nav-links  #contattaci {
+         color: #15242B;
+     }
+     .nav-links.active #contattaci:hover {
+         background: white;
          transform: translateX(5px);
      }
      .menu-overlay.active {

@@ -8,7 +8,7 @@ const translations = {
             departments: "Dipartimenti",
             rover: "Rover",
             sponsors: "Sponsor",
-            contact: "Contattaci"
+            contact: "Unisciti al Team"
         },
         hero: {
             title: "Morpheus Team",
@@ -97,7 +97,7 @@ const translations = {
             departments: "Departments",
             rover: "Rover",
             sponsors: "Sponsors",
-            contact: "Contact Us"
+            contact: "Join the Team"
         },
         hero: {
             title: "Morpheus Team",
